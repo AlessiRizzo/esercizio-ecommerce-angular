@@ -4,4 +4,7 @@
   <h3>{{ product.price | currency }}</h3>
   <!--currency per trasformare da numero a stringa-->
   <h3>{{ product.description }}</h3>
+
+  <button type="button" (click)="addToCart(product)">Buy</button>
+  <!--bottone per aggiungere prodotto al carrello-->
 </div>
