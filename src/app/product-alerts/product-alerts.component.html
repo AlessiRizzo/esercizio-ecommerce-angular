@@ -1,4 +1,4 @@
 <p *ngIf="product && product.price > 700">
-  <button type="button">Notify Me</button>
+  <button type="button" (click)="notify.emit()">Notify Me</button>
 </p>
-<!--bottone che compare SE il prezzo del prodotto è superiore a 700-->
+<!--bottone che compare SE il prezzo del prodotto è superiore a 700. evento click che richiama metodo emit()-->

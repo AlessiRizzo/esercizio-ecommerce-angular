@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../products';
 //importa l'array di prodotti
 
@@ -14,7 +14,10 @@ import { Product } from '../products';
   //
 })
 export class ProductAlertsComponent {
-  @Input() product!: Product;
+  @Input() product: Product | undefined;
   //definizione proprietà dove il decoratore (Input) attribuisce il valore a product dal  componente genitore Product
+  //
+  @Output() notify = new EventEmitter();
+  //proprietà notify, Output permette a ProductAlertsComponent di emettere un evento quando il valore della proprietà cambia
 }
 //questa classe gestisce la funzionalità per il componente
