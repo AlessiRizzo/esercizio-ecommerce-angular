@@ -4,7 +4,7 @@ export interface Product {
   price: number;
   description: string;
 }
-
+//elenco prodotti fittizi
 export const products = [
   {
     id: 1,

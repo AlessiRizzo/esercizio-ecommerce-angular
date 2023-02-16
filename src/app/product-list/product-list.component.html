@@ -1,8 +1,19 @@
 <h2>Products</h2>
+<!--ciclo for che gira prodotto per prodotto-->
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + ' details'">
+      <!--quando il mouse viene messo sopra al link viene visto nome+dettagli-->
+      {{ product.name }}
+    </a>
+  </h3>
+  <!--va aprendere i prodotti da products.ts-->
 
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+  <!--aggiunge la descrizione SE hanno una descrizione, infatti l'ultimo non ce l'ha-->
 
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->
+  <button type="button" (click)="share()">Share</button>
+  <!--bottone per condividere il prodotto, il bottone richiama una funzione in product-list.component.ts-->
+  <app-product-alerts [product]="product"></app-product-alerts>
+  <!--per visualizzare ProductAlertsComponentcome figlio di ProductListComponent-->
+</div>
