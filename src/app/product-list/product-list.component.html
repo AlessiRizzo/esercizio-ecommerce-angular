@@ -2,8 +2,11 @@
 <!--ciclo for che gira prodotto per prodotto-->
 <div *ngFor="let product of products">
   <h3>
-    <a [title]="product.name + ' details'">
-      <!--quando il mouse viene messo sopra al link viene visto nome+dettagli-->
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]" 
+    >
+      <!--quando il mouse viene messo sopra al link viene visto nome+dettagli, e con routerLink viene passato un URL o un percorso-->
       {{ product.name }}
     </a>
   </h3>
