@@ -1,1 +1,8 @@
 <p>product-details works!</p>
+<div *ngIf="product">
+  <!--se product esiste-->
+  <h3>{{ product.name }}</h3>
+  <h3>{{ product.price | currency }}</h3>
+  <!--currency per trasformare da numero a stringa-->
+  <h3>{{ product.description }}</h3>
+</div>
